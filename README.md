@@ -1,14 +1,12 @@
 # HITO SPARQL Faceter Test
 
-SPARQL Faceter demo using DBpedia.
-Based on the SPARQL Faceter demo using DBpedia.
-
-[SPARQL Faceter](https://github.com/SemanticComputing/angular-semantic-faceted-search) demo using DBpedia.
+[SPARQL Faceter](https://github.com/SemanticComputing/angular-semantic-faceted-search) prototype using HITO.
 Based on the [SPARQL Faceter DBpedia demo](https://github.com/SemanticComputing/sparql-faceter-dbpedia-demo).
 
 # Installation
 
 `npm install bower`
+
 `bower install`
 
 # Running locally
