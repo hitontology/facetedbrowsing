@@ -1,18 +1,119 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>SPARQL Faceter HITO Test</title>
-  <script src="bower_components/lodash/lodash.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-paging-sparql-service/dist/sparql-service.js"></script>
-  <script src="bower_components/angular-semantic-faceted-search/dist/semantic-faceted-search.js"></script>
-  <link rel="stylesheet" href="bower_components/angular-semantic-faceted-search/dist/semantic-faceted-search.css">
-  <!--<link rel="stylesheet" href="css/styles.css?v=1.0">-->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+<title>SPARQL Faceter</title>
+
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="bower_components/sparql-faceter/dist/semantic-faceted-search.css">
 </head>
 
 <body>
-  <script src="js/main.js"></script>
+
+<div id="nav"></div>
+
+<div ng-app="facetApp">
+  <div class="container-fluid" ng-controller="MainController as vm">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>HIT(ES)O&mdash;Health IT Evaluation Studies Ontology</h1>
+        <div ng-if="vm.error">
+          <uib-alert type="danger">{{ vm.error }}</uib-alert>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <!-- Facets are defined here using the configurations defined in the controller -->
+        <seco-text-facet data-options="vm.facets.name"></seco-text-facet>
+        <seco-text-facet data-options="vm.facets.name"></seco-text-facet>
+<!--        <seco-basic-facet data-options="vm.facets.method"></seco-basic-facet>
+        <seco-basic-facet data-options="vm.facets.intervention"></seco-basic-facet>
+        <seco-basic-facet data-options="vm.facets.outcomecriteria"></seco-basic-facet>
+        <seco-basic-facet data-options="vm.facets.year"></seco-basic-facet>-->
+<!--
+        <seco-basic-facet data-options="vm.facets.birthPlace"></seco-basic-facet>
+        <seco-basic-facet data-options="vm.facets.citizenship"></seco-basic-facet>-->
+      </div>
+
+      <!-- Results view -->
+      <div class="col-md-10">
+        <img src="images/loading-lg.gif" ng-show="vm.isLoadingResults" />
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Author</th>
+            <!--  <th>Abstract / Works</th>
+              <th>Birth Place</th>
+              <th>Notable Work</th>-->
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="study in vm.page">
+              <td style="width:21%">
+                <p>
+                {{ study.name }}
+<!--                <a ng-href="{{ study.id }}">{{ study.author }}</a>
+                  <span ng-if="study.author">({{ study.author }})</span>-->
+                </p>
+              </td>
+              <td>{{ study.firstAuthor}}</td>
+ </tr>
+<!--
+            <tr ng-repeat="writer in vm.page">
+              <td style="width:21%">
+                <p>
+                <!--<a ng-href="{{ writer.wikipediaLink || writer.id }}">{{ writer.name }}</a>-->
+                {{ writer.name }}
+                </p>
+                  <!--<span ng-if="writer.birthDate || writer.deathDate">({{ (writer.birthDate|date) || '?' }} - {{ writer.deathDate|date }})</span>
+                <img ng-if="writer.depiction" class="img img-responsive"
+                  ng-src="{{ writer.depiction }}" />
+              </td>
+              <td>
+                <p>{{ writer.abstract }}</p>
+                <p><span ng-repeat="work in vm.makeArray(writer.work)">
+                  <a ng-href="{{ work.link }}">{{ work.label }}</span></p>
+              </td>
+              <td>{{ writer.birthPlace }}</td>
+              <td>{{ writer.notableWork.join(", ") || writer.notableWork }}</td>-->
+            </tr>
+          </tbody>
+        </table>
+        <!-- Pagination -->
+        <div uib-pagination
+          class="pagination-sm"
+          max-size="10"
+          boundary-links="true"
+          rotate="false"
+          total-items="vm.totalCount"
+          ng-model="vm.pageNo"
+          ng-disabled="vm.isLoadingResults"
+          ng-change="vm.getPage()">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/lodash/dist/lodash.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="bower_components/angular-spinner/dist/angular-spinner.min.js"></script>
+<script src="bower_components/checklist-model/checklist-model.js"></script>
+<script src="bower_components/angular-paging-sparql-service/dist/sparql-service.js"></script>
+<script src="bower_components/sparql-faceter/dist/semantic-faceted-search.js"></script>
+<script src="bower_components/chart.js/dist/Chart.js"></script>
+<script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+
+<script src="dbpedia-service.js"></script>
+<script src="demo-controller.js"></script>
 </body>
 </html>

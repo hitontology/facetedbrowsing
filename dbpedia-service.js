@@ -43,12 +43,12 @@
                 name: 'Name'
             },
             // Basic facets
-            genre: {
-                facetId: 'genre',
+            firstAuthor: {
+                facetId: 'firstAuthor',
                 predicate: 'hito:hasFirstAuthor',
                 enabled: true,
                 chart: true,
-                name: 'Genre'
+                name: 'First Author'
             },
             birthPlace: {
                 facetId: 'birthPlace',
@@ -75,7 +75,7 @@
         // The facet configuration also accept a 'constraint' option.
         // The value should be a valid SPARQL pattern.
         // One could restrict the results further, e.g., to writers in the
-        // science fiction genre by using the 'constraint' option:
+        // science fiction firstAuthor by using the 'constraint' option:
         //
          var constraint = '?id a [rdfs:subClassOf hito:Study].';
         //
