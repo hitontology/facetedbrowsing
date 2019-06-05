@@ -8,6 +8,11 @@
 
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="bower_components/sparql-faceter/dist/semantic-faceted-search.css">
+  
+ <!-- Icons -->
+ <link rel="apple-touch-icon-precomposed" sizes="144x144" href="hito-apple-touch.png">
+ <link rel="shortcut icon" href="hito.png">
+
 </head>
 
 <body>
@@ -27,11 +32,12 @@
     <div class="row">
       <div class="col-md-2">
         <!-- Facets are defined here using the configurations defined in the controller -->
-        <seco-text-facet data-options="vm.facets.name"></seco-text-facet>
-        <seco-text-facet data-options="vm.facets.name"></seco-text-facet>
-<!--        <seco-basic-facet data-options="vm.facets.method"></seco-basic-facet>
-        <seco-basic-facet data-options="vm.facets.intervention"></seco-basic-facet>
-        <seco-basic-facet data-options="vm.facets.outcomecriteria"></seco-basic-facet>
+<seco-text-facet data-options="vm.facets.name"></seco-text-facet>
+<seco-text-facet data-options="vm.facets.firstAuthor"></seco-text-facet>
+<seco-basic-facet data-options="vm.facets.studyType"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.studyMethod"></seco-basic-facet>
+<!--<seco-text-facet data-options="vm.facets.studyMethod"></seco-text-facet>-->
+<!--        <seco-basic-facet data-options="vm.facets.outcomecriteria"></seco-basic-facet>
         <seco-basic-facet data-options="vm.facets.year"></seco-basic-facet>-->
 <!--
         <seco-basic-facet data-options="vm.facets.birthPlace"></seco-basic-facet>
@@ -55,21 +61,17 @@
             <tr ng-repeat="study in vm.page">
               <td style="width:21%">
                 <p>
-                {{ study.name }}
-<!--                <a ng-href="{{ study.id }}">{{ study.author }}</a>
-                  <span ng-if="study.author">({{ study.author }})</span>-->
+                <a ng-href="{{ study.id }}">{{ study.name }}</a>
                 </p>
               </td>
-              <td>{{ study.firstAuthor}}</td>
+              <td><a ng-href="{{ study.firstAuthor}}">{{ study.firstAuthorName}}</a></td>
  </tr>
 <!--
             <tr ng-repeat="writer in vm.page">
               <td style="width:21%">
                 <p>
-                <!--<a ng-href="{{ writer.wikipediaLink || writer.id }}">{{ writer.name }}</a>-->
                 {{ writer.name }}
                 </p>
-                  <!--<span ng-if="writer.birthDate || writer.deathDate">({{ (writer.birthDate|date) || '?' }} - {{ writer.deathDate|date }})</span>
                 <img ng-if="writer.depiction" class="img img-responsive"
                   ng-src="{{ writer.depiction }}" />
               </td>

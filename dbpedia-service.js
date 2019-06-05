@@ -42,32 +42,33 @@
                 enabled: true,
                 name: 'Name'
             },
-            // Basic facets
             firstAuthor: {
                 facetId: 'firstAuthor',
-                predicate: 'hito:hasFirstAuthor',
+                predicate: 'hito:hasFirstAuthor/rdfs:label',
                 enabled: true,
-                chart: true,
                 name: 'First Author'
             },
-            birthPlace: {
-                facetId: 'birthPlace',
-                predicate:'<http://dbpedia.org/ontology/birthPlace>',
+            // Basic facets
+            studyType: {
+                facetId: 'studyType',
+                predicate:'rdf:type',
                 enabled: true,
                 chart: true,
-                name: 'Birth Place'
+                name: 'Study Type'
             },
-            citizenship: {
-                facetId: 'citizenship',
-                predicate: '<http://dbpedia.org/ontology/citizenship>',
+     	    studyMethod: {
+                facetId: 'studyMethod',
+                predicate:'hito:hasStudyMethod',
                 enabled: true,
                 chart: true,
-                name: 'Citizenship'
-            }
-        };
+                name: 'Study Method'
+            },
+           };
 
-        var ENDPOINT_URL = 'https://www.snik.eu/sparql';
-        var GRAPH = 'http://hitontology.eu/ontology';
+        //const ENDPOINT_URL = 'https://www.snik.eu/sparql';
+        const ENDPOINT_URL = 'http://bruchtal.imise.uni-leipzig.de/virtuoso-hito/sparql';
+        const GRAPH = 'http://hitontology.eu/ontology';
+	const RESULTS_PER_PAGE = 15;
 
         // We are building a faceted search for writers.
 //        var rdfClass = '<http://hitontology.eu/ontology/NonExperimentalStudy>';
@@ -87,7 +88,7 @@
         var facetOptions = {
             endpointUrl: ENDPOINT_URL, // required
             //rdfClass: rdfClass, // optional
-            usePost: false,
+            usePost: true,
             constraint: constraint, // optional, not used in this demo
             preferredLang : 'en' // required
         };
@@ -109,49 +110,39 @@
         // an object. I.e. here ?work__id, ?work__label, and ?work__link will be
         // combined into an object:
         // writer.work = { id: '[work id]', label: '[work label]', link: '[work link]' }
-        var queryTemplate =
-        ' SELECT * FROM <'+GRAPH+'> WHERE {' +
-        '  <RESULT_SET> ' +
-        '  OPTIONAL { '+
-        '   ?id rdfs:label ?name . ' +
-        '   FILTER(langMatches(lang(?name), "en")) ' +
-        '  }' +
-        '  OPTIONAL { ' +
-        '   ?id dbp:birthDate ?birthDate . ' +
-        '  }' +
-        '  OPTIONAL { ' +
-        '   ?id dbp:deathDate ?deathDate . ' +
-        '  }' +
-        '  OPTIONAL { ' +
-        '   ?id dbo:thumbnail ?depiction . ' +
-        '  }' +
-        '  OPTIONAL { ' +
-        '   ?work__id dbo:author ?id ; ' +
-        '    rdfs:label ?work__label ; ' +
-        '    foaf:isPrimaryTopicOf ?work__link . ' +
-        '   FILTER(langMatches(lang(?work__label), "en")) ' +
-        '  }' +
-        '  OPTIONAL { ' +
-        '   ?id foaf:isPrimaryTopicOf ?wikipediaLink . ' +
-        '  }' +
-        '  OPTIONAL { ' +
-        '   ?id dbp:birthPlace ?birthPlace . ' +
-        '   FILTER(langMatches(lang(?birthPlace), "en")) ' +
-        '  }' +
-        '  OPTIONAL { ' +
-        '   ?id dbo:abstract ?abstract . ' +
-        '   FILTER(langMatches(lang(?abstract), "en")) ' +
-        '  }' +
-        '  OPTIONAL { ' +
-        '   ?id dbo:notableWork/rdfs:label ?notableWork . ' +
-        '   FILTER(langMatches(lang(?notableWork), "en")) ' +
-        '  }' +
-        ' }';
-
+        const queryTemplate = `SELECT * FROM <${GRAPH}> WHERE
+	{
+         <RESULT_SET> 
+         OPTIONAL { 
+          ?id rdfs:label ?name . 
+          FILTER(langMatches(lang(?name), "en")) 
+         }
+         OPTIONAL { 
+          ?id hito:hasFirstAuthor ?firstAuthor. 
+	   ?firstAuthor rdfs:label ?firstAuthorName
+         }
+        }`;
+        /* OPTIONAL { 
+          ?id dbp:deathDate ?deathDate . 
+         }
+         OPTIONAL { 
+          ?id dbo:thumbnail ?depiction . 
+         }
+         OPTIONAL { 
+          ?work__id dbo:author ?id ; 
+           rdfs:label ?work__label ; 
+           foaf:isPrimaryTopicOf ?work__link . 
+          FILTER(langMatches(lang(?work__label), "en")) 
+         }
+         OPTIONAL { 
+          ?id dbo:notableWork/rdfs:label ?notableWork . 
+          FILTER(langMatches(lang(?notableWork), "en")) 
+         }
+*/
         var resultOptions = {
             prefixes: prefixes, // required if the queryTemplate uses prefixes
             queryTemplate: queryTemplate, // required
-            resultsPerPage: 10, // optional (default is 10)
+            resultsPerPage: RESULTS_PER_PAGE, // optional (default is 10)
             pagesPerQuery: 1, // optional (default is 1)
             usePost: false,
             paging: true // optional (default is true), if true, enable paging of the results
