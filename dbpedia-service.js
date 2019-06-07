@@ -118,6 +118,9 @@
           FILTER(langMatches(lang(?name), "en")) 
          }
          OPTIONAL { 
+          ?id rdfs:isDefinedBy ?source.
+         }
+       OPTIONAL { 
           ?id hito:hasFirstAuthor ?firstAuthor. 
 	   ?firstAuthor rdfs:label ?firstAuthorName
          }
