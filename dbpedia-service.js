@@ -63,7 +63,35 @@
                 chart: true,
                 name: 'Study Method'
             },
-           };
+       	    applicationSystem: {
+                facetId: 'applicationSystem',
+                predicate:'hito:evaluatesApplicationSystem',
+                enabled: true,
+                chart: true,
+                name: 'Application System'
+            },
+       	    feature: {
+                facetId: 'feature',
+                predicate:'hito:evaluatesApplicationSystemHavingFeature',
+                enabled: true,
+                chart: true,
+                name: 'Feature'
+            },
+       	    unit: {
+                facetId: 'unit',
+                predicate:'hito:evaluatesApplicationSystemUsedInUnit',
+                enabled: true,
+                chart: true,
+                name: 'Unit'
+            },
+       	    product: {
+                facetId: 'product',
+                predicate:'hito:evaluatesApplicationSystemBasedOnProduct',
+                enabled: true,
+                chart: true,
+                name: 'Product'
+            },
+    };
 
         //const ENDPOINT_URL = 'https://www.snik.eu/sparql';
         const ENDPOINT_URL = 'https://bruchtal.imise.uni-leipzig.de/virtuoso-hito/sparql';
@@ -125,6 +153,19 @@
 	   ?firstAuthor rdfs:label ?firstAuthorName
          }
         }`;
+         /**OPTIONAL { 
+          ?id hito:evaluatesApplicationSystem ?informationSystem.
+         }
+         OPTIONAL { 
+          ?id hito:evaluatesApplicationSystemHavingFeature ?feature.
+         }
+         OPTIONAL { 
+          ?id hito:evaluatesApplicationSystemUsedInUnit ?unit.
+         }
+         OPTIONAL { 
+          ?id hito:evaluatesApplicationSystemBasedOnProduct ?product.
+         }
+	 */
         /* OPTIONAL { 
           ?id dbp:deathDate ?deathDate . 
          }

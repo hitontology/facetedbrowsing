@@ -22,20 +22,24 @@
 <div ng-app="facetApp">
   <div class="container-fluid" ng-controller="MainController as vm">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12" style="width:30vw">
         <h1>HIT(ES)O&mdash;Health IT Evaluation Studies Ontology</h1>
         <div ng-if="vm.error">
           <uib-alert type="danger">{{ vm.error }}</uib-alert>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-2">
+    <div class="row" >
+      <div class="col-md-2" >
         <!-- Facets are defined here using the configurations defined in the controller -->
 <seco-text-facet data-options="vm.facets.name"></seco-text-facet>
 <seco-text-facet data-options="vm.facets.firstAuthor"></seco-text-facet>
 <seco-basic-facet data-options="vm.facets.studyType"></seco-basic-facet>
 <seco-basic-facet data-options="vm.facets.studyMethod"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.applicationSystem"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.feature"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.unit"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.product"></seco-basic-facet>
 <!--<seco-text-facet data-options="vm.facets.studyMethod"></seco-text-facet>-->
 <!--        <seco-basic-facet data-options="vm.facets.outcomecriteria"></seco-basic-facet>
         <seco-basic-facet data-options="vm.facets.year"></seco-basic-facet>-->
@@ -45,7 +49,7 @@
       </div>
 
       <!-- Results view -->
-      <div class="col-md-10">
+      <div class="col-md-10"style="width:80vw" > <!-- doesn't add up but works -->
         <img src="images/loading-lg.gif" ng-show="vm.isLoadingResults" />
         <table class="table">
           <thead>
