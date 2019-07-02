@@ -94,7 +94,7 @@
     };
 
         //const ENDPOINT_URL = 'https://www.snik.eu/sparql';
-        const ENDPOINT_URL = 'https://bruchtal.imise.uni-leipzig.de/virtuoso-hito/sparql';
+        const ENDPOINT_URL = 'https://hitontology.eu/sparql';
         const GRAPH = 'http://hitontology.eu/ontology';
 	const RESULTS_PER_PAGE = 15;
 
