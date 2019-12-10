@@ -36,7 +36,7 @@
         // If 'enabled' is not true, the facet will be disabled by default.
         var facets = {
             // Text search facet for names
- /*           name: {
+           name: {
                 facetId: 'name',
                 predicate:'<http://www.w3.org/2000/01/rdf-schema#label>',
                 enabled: true,
@@ -48,20 +48,34 @@
                 predicate: 'hito:homepage',
                 enabled: true,
                 name: 'Homepage'
-            },*/
+            },
             feature: {
                 facetId: 'feature',
                 predicate:'hito:offersFeature',
                 enabled: true,
                 chart: true,
-                name: 'Feature'
+                name: 'Feature Citation'
             },
-            "function": {
+            featureclassified: {
+                facetId: 'featureclassified',
+                predicate:'hito:offersFeature/hito:featureClassified',
+                enabled: true,
+                chart: true,
+                name: 'Classified Feature'
+            },
+            function: {
                 facetId: 'function',
                 predicate:'hito:supportsEnterpriseFunctionCitation',
                 enabled: true,
                 chart: true,
                 name: 'Function'
+            },
+            functionclassified: {
+                facetId: 'functionclassified',
+                predicate:'hito:supportsEnterpriseFunctionCitation/hito:functionClassified',
+                enabled: true,
+                chart: true,
+                name: 'Classified Function'
             },
      	    operatingsystem: {
                 facetId: 'operatingsystem',
