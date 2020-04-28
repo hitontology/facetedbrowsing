@@ -43,39 +43,63 @@
                 name: 'Name'
             },
             // Basic facets
+            applicationsystem: {
+                facetId: 'applicationsystem',
+                predicate: 'hito:applicationSystem/hito:applicationSystemClassified',
+                enabled: true,
+                name: 'Application System'
+            },
+            client: {
+                facetId: 'client',
+                predicate: 'hito:supportsClient',
+                enabled: true,
+                name: 'Client'
+            },
+            database: {
+                facetId: 'database',
+                predicate: 'hito:usesDbs',
+                enabled: true,
+                name: 'Database'
+            },
             homepage: {
                 facetId: 'homepage',
                 predicate: 'hito:homepage',
                 enabled: true,
                 name: 'Homepage'
             },
-            feature: {
-                facetId: 'feature',
-                predicate:'hito:offersFeature',
+            featurecitation: {
+                facetId: 'featurecitation',
+                predicate:'hito:feature',
                 enabled: true,
                 chart: true,
                 name: 'Feature Citation'
             },
             featureclassified: {
                 facetId: 'featureclassified',
-                predicate:'hito:offersFeature/hito:featureClassified',
+                predicate:'hito:feature/hito:featureClassified',
                 enabled: true,
                 chart: true,
-                name: 'Classified Feature'
+                name: 'Feature'
             },
-            function: {
-                facetId: 'function',
-                predicate:'hito:supportsEnterpriseFunctionCitation',
+            functioncitation: {
+                facetId: 'functioncitation',
+                predicate:'hito:function',
+                enabled: true,
+                chart: true,
+                name: 'Function Citation'
+            },
+            functionclassified: {
+                facetId: 'functionclassified',
+                predicate:'hito:enterpriseFunction/hito:enterpriseFunctionClassified',
                 enabled: true,
                 chart: true,
                 name: 'Function'
             },
-            functionclassified: {
-                facetId: 'functionclassified',
-                predicate:'hito:supportsEnterpriseFunctionCitation/hito:functionClassified',
+            language: {
+                facetId: 'language',
+                predicate: 'hito:supportsLanguage',
                 enabled: true,
-                chart: true,
-                name: 'Classified Function'
+                name: 'Language'
             },
      	    operatingsystem: {
                 facetId: 'operatingsystem',
@@ -84,12 +108,11 @@
                 chart: true,
                 name: 'Operating System'
             },
-       	    applicationSystem: {
-                facetId: 'applicationSystem',
-                predicate:'hito:implements',
+            programminglanguage: {
+                facetId: 'programminglanguage',
+                predicate: 'hito:programmingLanguage',
                 enabled: true,
-                chart: true,
-                name: 'Application System'
+                name: 'Programming Language'
             },
         };
 
@@ -150,6 +173,7 @@
           ?id rdfs:isDefinedBy ?source.
          }
          OPTIONAL {?id hito:homepage ?homepage.}
+         OPTIONAL {?id hito:programmingLanguage ?programminglanguage.}
          OPTIONAL {?id hito:license ?license. ?license rdfs:label ?licenselabel. filter(langmatches(lang(?licenselabel),"en") OR langmatches(lang(?licenselabel),""))}
          OPTIONAL {?id hito:runsOnOs ?os. ?os rdfs:label ?oslabel. filter(langmatches(lang(?oslabel),"en") OR langmatches(lang(?oslabel),""))}
         }`;
