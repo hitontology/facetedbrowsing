@@ -7,7 +7,7 @@ Based on the [SPARQL Faceter DBpedia demo](https://github.com/SemanticComputing/
 
 `npm install bower`
 
-`bower install`
+`npx bower install`
 
 # Running locally
 
