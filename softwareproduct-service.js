@@ -120,7 +120,7 @@
         const ENDPOINT_URL = 'https://hitontology.eu/sparql';
         const GRAPH = 'http://hitontology.eu/ontology';
         const GRAPH2 = 'http://dbpedia.org';
-	const RESULTS_PER_PAGE = 30;
+        const RESULTS_PER_PAGE = 100;
 
         // We are building a faceted search for writers.
 //        var rdfClass = '<http://hitontology.eu/ontology/NonExperimentalStudy>';
@@ -162,14 +162,14 @@
         // an object. I.e. here ?work__id, ?work__label, and ?work__link will be
         // combined into an object:
         // writer.work = { id: '[work id]', label: '[work label]', link: '[work link]' }
-        //FILTER(langMatches(lang(?name), "en")) 
+        //FILTER(langMatches(lang(?name), "en"))
         const queryTemplate = `SELECT * FROM <${GRAPH}> FROM <${GRAPH2}> WHERE
 	{
-         <RESULT_SET> 
-         OPTIONAL { 
-          ?id rdfs:label ?name . 
+         <RESULT_SET>
+         OPTIONAL {
+          ?id rdfs:label ?name .
          }
-         OPTIONAL { 
+         OPTIONAL {
           ?id rdfs:isDefinedBy ?source.
          }
          OPTIONAL {?id hito:homepage ?homepage.}
@@ -177,34 +177,34 @@
          OPTIONAL {?id hito:license ?license. ?license rdfs:label ?licenselabel. filter(langmatches(lang(?licenselabel),"en") OR langmatches(lang(?licenselabel),""))}
          OPTIONAL {?id hito:runsOnOs ?os. ?os rdfs:label ?oslabel. filter(langmatches(lang(?oslabel),"en") OR langmatches(lang(?oslabel),""))}
         }`;
-         /**OPTIONAL { 
+         /**OPTIONAL {
           ?id hito:evaluatesApplicationSystem ?informationSystem.
          }
-         OPTIONAL { 
+         OPTIONAL {
           ?id hito:evaluatesApplicationSystemHavingFeature ?feature.
          }
-         OPTIONAL { 
+         OPTIONAL {
           ?id hito:evaluatesApplicationSystemUsedInUnit ?unit.
          }
-         OPTIONAL { 
+         OPTIONAL {
           ?id hito:evaluatesApplicationSystemBasedOnProduct ?product.
          }
 	 */
-        /* OPTIONAL { 
-          ?id dbp:deathDate ?deathDate . 
+        /* OPTIONAL {
+          ?id dbp:deathDate ?deathDate .
          }
-         OPTIONAL { 
-          ?id dbo:thumbnail ?depiction . 
+         OPTIONAL {
+          ?id dbo:thumbnail ?depiction .
          }
-         OPTIONAL { 
-          ?work__id dbo:author ?id ; 
-           rdfs:label ?work__label ; 
-           foaf:isPrimaryTopicOf ?work__link . 
-          FILTER(langMatches(lang(?work__label), "en")) 
+         OPTIONAL {
+          ?work__id dbo:author ?id ;
+           rdfs:label ?work__label ;
+           foaf:isPrimaryTopicOf ?work__link .
+          FILTER(langMatches(lang(?work__label), "en"))
          }
-         OPTIONAL { 
-          ?id dbo:notableWork/rdfs:label ?notableWork . 
-          FILTER(langMatches(lang(?notableWork), "en")) 
+         OPTIONAL {
+          ?id dbo:notableWork/rdfs:label ?notableWork .
+          FILTER(langMatches(lang(?notableWork), "en"))
          }
 */
         var resultOptions = {

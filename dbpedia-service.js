@@ -96,7 +96,7 @@
         //const ENDPOINT_URL = 'https://www.snik.eu/sparql';
         const ENDPOINT_URL = 'https://hitontology.eu/sparql';
         const GRAPH = 'http://hitontology.eu/ontology';
-	const RESULTS_PER_PAGE = 15;
+        const RESULTS_PER_PAGE = 100;
 
         // We are building a faceted search for writers.
 //        var rdfClass = '<http://hitontology.eu/ontology/NonExperimentalStudy>';
@@ -140,47 +140,47 @@
         // writer.work = { id: '[work id]', label: '[work label]', link: '[work link]' }
         const queryTemplate = `SELECT * FROM <${GRAPH}> WHERE
 	{
-         <RESULT_SET> 
-         OPTIONAL { 
-          ?id rdfs:label ?name . 
-          FILTER(langMatches(lang(?name), "en")) 
+         <RESULT_SET>
+         OPTIONAL {
+          ?id rdfs:label ?name .
+          FILTER(langMatches(lang(?name), "en"))
          }
-         OPTIONAL { 
+         OPTIONAL {
           ?id rdfs:isDefinedBy ?source.
          }
-       OPTIONAL { 
-          ?id hito:hasFirstAuthor ?firstAuthor. 
+       OPTIONAL {
+          ?id hito:hasFirstAuthor ?firstAuthor.
 	   ?firstAuthor rdfs:label ?firstAuthorName
          }
         }`;
-         /**OPTIONAL { 
+         /**OPTIONAL {
           ?id hito:evaluatesApplicationSystem ?informationSystem.
          }
-         OPTIONAL { 
+         OPTIONAL {
           ?id hito:evaluatesApplicationSystemHavingFeature ?feature.
          }
-         OPTIONAL { 
+         OPTIONAL {
           ?id hito:evaluatesApplicationSystemUsedInUnit ?unit.
          }
-         OPTIONAL { 
+         OPTIONAL {
           ?id hito:evaluatesApplicationSystemBasedOnProduct ?product.
          }
 	 */
-        /* OPTIONAL { 
-          ?id dbp:deathDate ?deathDate . 
+        /* OPTIONAL {
+          ?id dbp:deathDate ?deathDate .
          }
-         OPTIONAL { 
-          ?id dbo:thumbnail ?depiction . 
+         OPTIONAL {
+          ?id dbo:thumbnail ?depiction .
          }
-         OPTIONAL { 
-          ?work__id dbo:author ?id ; 
-           rdfs:label ?work__label ; 
-           foaf:isPrimaryTopicOf ?work__link . 
-          FILTER(langMatches(lang(?work__label), "en")) 
+         OPTIONAL {
+          ?work__id dbo:author ?id ;
+           rdfs:label ?work__label ;
+           foaf:isPrimaryTopicOf ?work__link .
+          FILTER(langMatches(lang(?work__label), "en"))
          }
-         OPTIONAL { 
-          ?id dbo:notableWork/rdfs:label ?notableWork . 
-          FILTER(langMatches(lang(?notableWork), "en")) 
+         OPTIONAL {
+          ?id dbo:notableWork/rdfs:label ?notableWork .
+          FILTER(langMatches(lang(?notableWork), "en"))
          }
 */
         var resultOptions = {
