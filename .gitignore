@@ -2,3 +2,4 @@
 bower_components
 node_packages
 package-lock.json
+node_modules
