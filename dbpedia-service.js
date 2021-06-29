@@ -65,21 +65,21 @@
             },
        	    applicationSystem: {
                 facetId: 'applicationSystem',
-                predicate:'hito:evaluatesApplicationSystem',
+                predicate:'hito:evaluatesApplicationSystem/hito:applicationSystemClassified',
                 enabled: true,
                 chart: true,
                 name: 'Application System'
             },
        	    feature: {
                 facetId: 'feature',
-                predicate:'hito:evaluatesApplicationSystemHavingFeature',
+                predicate:'hito:evaluatesApplicationSystemHavingFeature/hito:featureClassified',
                 enabled: true,
                 chart: true,
                 name: 'Feature'
             },
        	    unit: {
                 facetId: 'unit',
-                predicate:'hito:evaluatesApplicationSystemUsedInUnit',
+                predicate:'hito:evaluatesApplicationSystemUsedInUnit/hito:organizationalUnitClassified',
                 enabled: true,
                 chart: true,
                 name: 'Unit'
