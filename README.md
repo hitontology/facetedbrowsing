@@ -18,3 +18,11 @@ You will need to serve the files with a server, for example python's built-in HT
 Then navigate to `http://localhost:8000`.
 
 You can also execute the `run` script.
+
+# Docker
+
+    docker build -t hito-facetedbrowsing .
+	facetedbrowsing$ docker run --network="host" hito-facetedbrowsing
+
+# CORS
+CORS needs to be activated in the SPARQL endpoint. [How to activate CORS in Virtuoso SPARQL](http://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksCORsEnableSPARQLURLs).
