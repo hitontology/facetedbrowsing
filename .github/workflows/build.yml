@@ -1,0 +1,33 @@
+name: build
+ 
+on:
+  push:
+    branches:
+      - master
+ 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+ 
+      - uses: actions/setup-node@v2
+ 
+      - name: Cache bower components
+        uses: actions/cache@v2
+        with:
+          path: ~/bower_components
+          key: cache-${{ hashFiles('**/bower.json') }}
+ 
+      - name: Install and build
+        run: |
+          npm install bower@^1.8.13
+          npx bower install
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: .
+          single-commit: true
