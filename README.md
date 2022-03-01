@@ -1,20 +1,29 @@
-# HITO SPARQL Faceter Test
+# HITO Faceted Search
 
-[SPARQL Faceter](https://github.com/SemanticComputing/angular-semantic-faceted-search) prototype using HITO.
+Browse studies and software products of [HITO](https://hitontology.eu) using the [HITO SPARQL Endpoint](https://hitontology.eu/sparql).
+Published at:
+* <https://hitontology.eu/search/>
+* <https://hitontology.eu/search/softwareproduct.html>
+* <https://hitontology.github.io/facetedbrowsing>
+* <https://hitontology.github.io/facetedbrowsing/softwareproduct.html>
+
 Based on the [SPARQL Faceter DBpedia demo](https://github.com/SemanticComputing/sparql-faceter-dbpedia-demo).
 
-# Installation
+# Build and Deploy
+The faceted search is automatically built and deployed to the gh-pages branch using [a GitHub Action](/actions).
+Testing the action locally with [act](https://github.com/nektos/act) is not supported as the deployment needs rsync and push rights.
 
-`npm install bower`
+# Install and Build locally
 
-`npx bower install`
+    npm install bower@^1.8.13
+    npx bower install
 
-# Running locally
+# Run locally
 
 You will need to serve the files with a server, for example python's built-in HTTP server:
 
 `python3 -m http.server`
 
-Then navigate to `http://localhost:8000`.
+Then navigate to <http://localhost:8000> or <http://localhost:8000/softwareproduct.html>.
 
 You can also execute the `run` script.
