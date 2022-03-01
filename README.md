@@ -27,3 +27,10 @@ You will need to serve the files with a server, for example python's built-in HT
 Then navigate to <http://localhost:8000> or <http://localhost:8000/softwareproduct.html>.
 
 You can also execute the `run` script.
+
+# Using Docker
+
+    docker build -t hito-search .
+	docker run --network="host" hito-search
+
+Then open <http://0.0.0.0:8043> in a browser.
