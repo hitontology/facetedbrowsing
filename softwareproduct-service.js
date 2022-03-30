@@ -44,7 +44,7 @@
       // Basic facets
       applicationsystem: {
         facetId: 'applicationsystem',
-        predicate: 'hito:applicationSystem/hito:applicationSystemClassified',
+        predicate: 'hito:astOffersAstCit/hito:astCitClassifiedAs',
         enabled: true,
         name: 'Application System',
       },
@@ -68,28 +68,28 @@
       },
       featurecitation: {
         facetId: 'featurecitation',
-        predicate: 'hito:feature',
+        predicate: 'hito:fOffersFCit',
         enabled: true,
         chart: true,
         name: 'Feature Citation',
       },
       featureclassified: {
         facetId: 'featureclassified',
-        predicate: 'hito:feature/hito:featureClassified',
+        predicate: 'hito:fOffersFCit/hito:fCitClassifiedAs',
         enabled: true,
         chart: true,
         name: 'Feature',
       },
       functioncitation: {
         facetId: 'functioncitation',
-        predicate: 'hito:function',
+        predicate: 'hito:efSupportsEfCit',
         enabled: true,
         chart: true,
         name: 'Function Citation',
       },
       functionclassified: {
         facetId: 'functionclassified',
-        predicate: 'hito:enterpriseFunction/hito:enterpriseFunctionClassified',
+        predicate: 'hito:efSupportsEfCit/hito:efCitClassifiedAs',
         enabled: true,
         chart: true,
         name: 'Function',
