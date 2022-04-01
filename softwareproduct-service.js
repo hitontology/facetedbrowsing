@@ -50,13 +50,13 @@
       },
       client: {
         facetId: 'client',
-        predicate: 'hito:supportsClient',
+        predicate: 'hito:client',
         enabled: true,
         name: 'Client',
       },
       database: {
         facetId: 'database',
-        predicate: 'hito:usesDbs',
+        predicate: 'hito:databaseSystem',
         enabled: true,
         name: 'Database',
       },
@@ -96,13 +96,13 @@
       },
       language: {
         facetId: 'language',
-        predicate: 'hito:supportsLanguage',
+        predicate: 'hito:language',
         enabled: true,
         name: 'Language',
       },
       operatingsystem: {
         facetId: 'operatingsystem',
-        predicate: 'hito:runsOnOs',
+        predicate: 'hito:operatingSystem',
         enabled: true,
         chart: true,
         name: 'Operating System',
@@ -174,7 +174,7 @@
          OPTIONAL {?id hito:homepage ?homepage.}
          OPTIONAL {?id hito:programmingLanguage ?programminglanguage.}
          OPTIONAL {?id hito:license ?license. ?license rdfs:label ?licenselabel. filter(langmatches(lang(?licenselabel),"en") OR langmatches(lang(?licenselabel),""))}
-         OPTIONAL {?id hito:runsOnOs ?os. ?os rdfs:label ?oslabel. filter(langmatches(lang(?oslabel),"en") OR langmatches(lang(?oslabel),""))}
+         OPTIONAL {?id hito:operatingSystem ?os. ?os rdfs:label ?oslabel. filter(langmatches(lang(?oslabel),"en") OR langmatches(lang(?oslabel),""))}
         }`;
     /**OPTIONAL {
           ?id hito:evaluatesApplicationSystem ?informationSystem.

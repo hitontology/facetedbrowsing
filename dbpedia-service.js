@@ -43,7 +43,7 @@
       },
       firstAuthor: {
         facetId: 'firstAuthor',
-        predicate: 'hito:hasFirstAuthor/rdfs:label',
+        predicate: 'hito:firstAuthor',
         enabled: true,
         name: 'First Author',
       },
@@ -57,35 +57,35 @@
       },
       studyMethod: {
         facetId: 'studyMethod',
-        predicate: 'hito:hasStudyMethod',
+        predicate: 'hito:studyMethod',
         enabled: true,
         chart: true,
         name: 'Study Method',
       },
       applicationSystem: {
         facetId: 'applicationSystem',
-        predicate: 'hito:evaluatesApplicationSystem/hito:astCitClassifiedAs',
+        predicate: 'hito:evaluatesApplicationSystemType/hito:astCitClassifiedAs',
         enabled: true,
         chart: true,
         name: 'Application System',
       },
       feature: {
         facetId: 'feature',
-        predicate: 'hito:evaluatesApplicationSystemHavingFeature/hito:fCitClassifiedAs',
+        predicate: 'hito:evaluatesApplicationSystemTypeHavingFeature/hito:fCitClassifiedAs',
         enabled: true,
         chart: true,
         name: 'Feature',
       },
       unit: {
         facetId: 'unit',
-        predicate: 'hito:evaluatesApplicationSystemUsedInUnit/hito:ouCitClassifiedAs',
+        predicate: 'hito:evaluatesApplicationSystemTypeUsedInUnit/hito:ouCitClassifiedAs',
         enabled: true,
         chart: true,
         name: 'Unit',
       },
       product: {
         facetId: 'product',
-        predicate: 'hito:evaluatesApplicationSystemBasedOnProduct',
+        predicate: 'hito:evaluatesProduct',
         enabled: true,
         chart: true,
         name: 'Product',
@@ -148,21 +148,20 @@
           ?id rdfs:isDefinedBy ?source.
          }
        OPTIONAL {
-          ?id hito:hasFirstAuthor ?firstAuthor.
-	   ?firstAuthor rdfs:label ?firstAuthorName
+          ?id hito:firstAuthor ?firstAuthor.
          }
         }`;
     /**OPTIONAL {
-          ?id hito:evaluatesApplicationSystem ?informationSystem.
+          ?id hito:evaluatesApplicationSystemType ?informationSystem.
          }
          OPTIONAL {
-          ?id hito:evaluatesApplicationSystemHavingFeature ?feature.
+          ?id hito:evaluatesApplicationSystemTypeHavingFeature ?feature.
          }
          OPTIONAL {
-          ?id hito:evaluatesApplicationSystemUsedInUnit ?unit.
+          ?id hito:evaluatesApplicationSystemTypeUsedInUnit ?unit.
          }
          OPTIONAL {
-          ?id hito:evaluatesApplicationSystemBasedOnProduct ?product.
+          ?id hito:evaluatesApplicationSystemTypeBasedOnProduct ?product.
          }
 	 */
     /* OPTIONAL {
