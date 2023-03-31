@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 FROM node
 WORKDIR /bower
 COPY bower.json .
