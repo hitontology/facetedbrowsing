@@ -1,5 +1,6 @@
 name: build
- 
+permissions:
+  contents: write
 on:
   workflow_dispatch:
   push:
@@ -13,20 +14,24 @@ on:
       - 'LICENSE'
       - 'README.md'
       - '.prettierrc'
- 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
- 
+
       - uses: actions/setup-node@v4
         with:
           cache: 'npm'
           cache-dependency-path: '**/package.json'
- 
-      - run: npm install
+
+      # github-pages-deploy-action skips does not deploy .gitignore entries
+      - name: Install
+        run: |
+          npm install
+          sed -i "s|node_modules||" .gitignore
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
