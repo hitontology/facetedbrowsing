@@ -1,12 +1,11 @@
 # syntax=docker/dockerfile:1
 FROM node
-WORKDIR /bower
-COPY bower.json .
-RUN npm install bower@1.8.13 \
-	&& npx bower install \
-	&& ls | grep -v bower_components | xargs rm -rf
+WORKDIR /facetedbrowsing
+COPY package.json .
+# cache mount won't be part of the image
+RUN --mount=type=cache,target=/facetedbrowsing/node_modules/ npm install && cp -r node_modules node_schmodules
 
 FROM pierrezemb/gostatic
 WORKDIR /srv/http
-COPY --from=0 /bower/ .
+COPY --from=0 /facetedbrowsing/node_schmodules ./node_modules
 COPY . .

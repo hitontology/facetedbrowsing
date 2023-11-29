@@ -33,7 +33,7 @@ You can also execute the `run` script.
     docker build -t hito-search .
 	docker run --network="host" hito-search
 
-Then open <http://0.0.0.0:8043> in a browser.
+Then open <http://0.0.0.0:8043> or <http://0.0.0.0:8043/softwareproduct.html> in a browser.
 
 # CORS
 CORS needs to be activated in the SPARQL endpoint. [How to activate CORS in Virtuoso SPARQL](http://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksCORsEnableSPARQLURLs).

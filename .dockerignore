@@ -1,10 +1,9 @@
 *.swp
-bower_components
 node_packages
-package.json
 package-lock.json
 node_modules
 Dockerfile
 run
 README.md
 .*
+LICENSE
