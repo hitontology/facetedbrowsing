@@ -5,6 +5,14 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - '.gitignore'
+      - '.dockerignore'
+      - '.github/dependabot.yml'
+      - 'Dockerfile'
+      - 'LICENSE'
+      - 'README.md'
+      - '.prettierrc'
  
 jobs:
   deploy:
