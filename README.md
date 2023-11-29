@@ -15,8 +15,7 @@ Testing the action locally with [act](https://github.com/nektos/act) is not supp
 
 # Install and Build locally
 
-    npm install bower@^1.8.13
-    npx bower install
+    npm install
 
 # Run locally
 
