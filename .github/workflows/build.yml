@@ -17,16 +17,14 @@ jobs:
       - name: Cache bower components
         uses: actions/cache@v2
         with:
-          path: ~/bower_components
-          key: cache-${{ hashFiles('**/bower.json') }}
+          path: ~/node_modules
+          key: cache-${{ hashFiles('**/package.json') }}
  
       - name: Install and build
-        run: |
-          npm install bower@^1.8.13
-          npx bower install
+        run: npm install
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: .
