@@ -56,7 +56,7 @@
       },
       database: {
         facetId: 'database',
-        predicate: 'hito:databaseSystem',
+        predicate: 'hito:databaseManagementSystem',
         enabled: true,
         name: 'Database',
       },
