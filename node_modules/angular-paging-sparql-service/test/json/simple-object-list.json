@@ -1,0 +1,48 @@
+[
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_536" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-03-27" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/municipalities/m_place_141" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Lapua" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_368" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-15" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_369" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-15" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_370" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-17" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/municipalities/m_place_183" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Vaasa" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_373" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-18" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_377" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-20" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_382" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-25" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_384" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-28" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_387" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-03-02" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/municipalities/m_place_398" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Lahti" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_391" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-03-04" }
+    }
+]

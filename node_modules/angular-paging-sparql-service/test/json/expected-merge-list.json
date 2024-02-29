@@ -1,0 +1,48 @@
+[
+    {
+        "id": "http://ldf.fi/warsa/events/event_347" ,
+        "date": "1940-01-17" ,
+        "place": {
+            "id": "http://ldf.fi/warsa/places/karelian_places/k_place_30" ,
+            "label": "Pitkäranta"
+        }
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_525" ,
+        "date": "1940-02-22" ,
+        "place": [
+            {
+                "id": "http://ldf.fi/warsa/places/karelian_places/k_place_30" ,
+                "label": "Pitkäranta"
+            },
+            {
+                "id": "http://ldf.fi/warsa/places/karelian_places/k_place_33584" ,
+                "label": "Vuoksi"
+            },
+            {
+                "id": "http://ldf.fi/warsa/places/karelian_places/k_place_1057" ,
+                "label": "Kämärä"
+            },
+            {
+                "id": "http://ldf.fi/warsa/places/karelian_places/k_place_32784" ,
+                "label": "Laatokka"
+            },
+            {
+                "id": "http://ldf.fi/warsa/places/karelian_places/k_place_1505" ,
+                "label": "Taipale"
+            },
+            {
+                "id": "http://ldf.fi/warsa/places/karelian_places/k_place_34993" ,
+                "label": "Muolaanjärvi"
+            }
+        ]
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_1233" ,
+        "date": "1940-02-26" ,
+        "place": {
+            "id": "http://ldf.fi/warsa/places/karelian_places/k_place_30" ,
+            "label": "Pitkäranta"
+        }
+    }
+]

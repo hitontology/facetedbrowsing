@@ -1,0 +1,54 @@
+[
+    {
+        "id": "http://ldf.fi/warsa/events/event_536" ,
+        "date": "1940-03-27" ,
+        "place": {
+            "id": "http://ldf.fi/warsa/places/municipalities/m_place_141" ,
+            "label": "Lapua"
+        }
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_368" ,
+        "date": "1940-02-15"
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_369" ,
+        "date": "1940-02-15"
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_370" ,
+        "date": "1940-02-17" ,
+        "place": {
+            "id": "http://ldf.fi/warsa/places/municipalities/m_place_183" ,
+            "label": "Vaasa"
+        }
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_373" ,
+        "date": "1940-02-18"
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_377" ,
+        "date": "1940-02-20"
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_382" ,
+        "date": "1940-02-25"
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_384" ,
+        "date": "1940-02-28"
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_387" ,
+        "date": "1940-03-02" ,
+        "place": {
+            "id": "http://ldf.fi/warsa/places/municipalities/m_place_398" ,
+            "label": "Lahti"
+        }
+    } ,
+    {
+        "id": "http://ldf.fi/warsa/events/event_391" ,
+        "date": "1940-03-04"
+    }
+]
