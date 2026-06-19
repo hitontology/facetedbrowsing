@@ -1,0 +1,34 @@
+{
+  "name": "hito-faceted-search",
+  "description": "HITO Faceted Search",
+  "main": "demo-controller.js",
+  "author": "Erkki Heino <erkki.heino@aalto.fi> (original bower demo), Konrad Höffner (adapted to npm and HITO)",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/hitontology/facetedbrowsing",
+  "keywords": [
+    "faceted search",
+    "faceted browsing",
+    "hito"
+  ],
+  "files": [
+    "demo-controller.js"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "angular-bootstrap": "^0.12.2",
+    "angular-chart.js": "^1.1.1",
+    "angular-paging-sparql-service": "^0.9.0",
+    "angular-spinner": "^1.0.1",
+    "bootstrap": "^3.4.1",
+    "chart.js": "^2.9.4",
+    "checklist-model": "^1.0.0",
+    "jquery": "^3.7.1",
+    "lodash": "^4.17.21",
+    "sparql-faceter": "^1.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hitontology/facetedbrowsing.git"
+  }
+}

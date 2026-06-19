@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <title>SPARQL Faceter</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/sparql-faceter/dist/semantic-faceted-search.css" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="hito-apple-touch.png" />
+    <link rel="shortcut icon" href="hito.png" />
+    <style></style>
+  </head>
+
+  <body>
+    <div id="nav"></div>
+
+    <div ng-app="facetApp">
+      <div class="container-fluid" ng-controller="MainController as vm">
+        <h1>HITO Software Products</h1>
+
+        <div class="row">
+          <div class="col-md-12" style="width: 30vw">
+            <div ng-if="vm.error">
+              <uib-alert type="danger">{{ vm.error }}</uib-alert>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: minmax(35em, 25%) 1fr">
+          <div style="resize: horizontal; overflow: visible; resize: horizontal">
+            <!-- Facets are defined here using the configurations defined in the controller -->
+            <seco-basic-facet data-options="vm.facets.featureclassified"></seco-basic-facet>
+            <!--<seco-basic-facet data-options="vm.facets.feature"></seco-basic-facet>-->
+            <seco-basic-facet data-options="vm.facets.functionclassified"></seco-basic-facet>
+            <seco-basic-facet data-options="vm.facets.applicationsystem"></seco-basic-facet>
+            <!--<seco-basic-facet data-options="vm.facets.usergroup"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.organizationalunit"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets."></seco-basic-facet>-->
+            <seco-basic-facet data-options="vm.facets.client"></seco-basic-facet>
+            <seco-basic-facet data-options="vm.facets.language"></seco-basic-facet>
+            <seco-basic-facet data-options="vm.facets.database"></seco-basic-facet>
+            <!--<seco-basic-facet data-options="vm.facets.function"></seco-basic-facet>-->
+            <!--<seco-basic-facet data-options="vm.facets.license"></seco-basic-facet>-->
+            <!--<seco-basic-facet data-options="vm.facets.operatingsystem"></seco-basic-facet>-->
+            <!--<seco-basic-facet data-options="vm.facets.interoperability"></seco-basic-facet>-->
+
+            <!--<seco-text-facet data-options="vm.facets.firstAuthor"></seco-text-facet>
+<seco-basic-facet data-options="vm.facets.studyType"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.studyMethod"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.applicationSystem"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.feature"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.unit"></seco-basic-facet>
+<seco-basic-facet data-options="vm.facets.product"></seco-basic-facet>-->
+            <!--<seco-text-facet data-options="vm.facets.studyMethod"></seco-text-facet>-->
+            <!--        <seco-basic-facet data-options="vm.facets.outcomecriteria"></seco-basic-facet>
+        <seco-basic-facet data-options="vm.facets.year"></seco-basic-facet>-->
+            <!--
+        <seco-basic-facet data-options="vm.facets.birthPlace"></seco-basic-facet>
+        <seco-basic-facet data-options="vm.facets.citizenship"></seco-basic-facet>-->
+          </div>
+
+          <div style="display: inline-block; overflow-x: hidden; vertical-align: top">
+            <img src="images/loading-lg.gif" ng-show="vm.isLoadingResults" />
+            <table class="table" style="width: 100%; white-space: nowrap">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Homepage</th>
+                  <th>License</th>
+                  <th>Operating System</th>
+                  <th>Programming Language</th>
+                  <!--  <th>Abstract / Works</th>
+              <th>Birth Place</th>
+              <th>Notable Work</th>-->
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="product in vm.page">
+                  <td style="width: 21%">
+                    <p>
+                      <a ng-href="{{ product.id }}">{{ product.name }}</a>
+                    </p>
+                  </td>
+                  <td><a ng-href="{{ product.homepage}}" target="_blank">{{ product.homepage}}</a></td>
+                  <td><a ng-href="{{ product.license}}" target="_blank">{{ product.licenselabel}}</a></td>
+                  <td><a ng-href="{{ product.os}}" target="_blank">{{ product.oslabel}}</a></td>
+                  <td><a ng-href="{{ product.programminglanguage}}" target="_blank">{{ product.programminglanguage}}</a></td>
+                  <!--              <td>{{ study.source}}</td>-->
+                </tr>
+                <!--
+            <tr ng-repeat="writer in vm.page">
+              <td style="width:21%">
+                <p>
+                {{ writer.name }}
+                </p>
+                <img ng-if="writer.depiction" class="img img-responsive"
+                  ng-src="{{ writer.depiction }}" />
+              </td>
+              <td>
+                <p>{{ writer.abstract }}</p>
+                <p><span ng-repeat="work in vm.makeArray(writer.work)">
+                  <a ng-href="{{ work.link }}">{{ work.label }}</span></p>
+              </td>
+              <td>{{ writer.birthPlace }}</td>
+              <td>{{ writer.notableWork.join(", ") || writer.notableWork }}</td>
+            </tr>-->
+              </tbody>
+            </table>
+            <div
+              uib-pagination
+              class="pagination-sm"
+              max-size="10"
+              boundary-links="true"
+              rotate="false"
+              total-items="vm.totalCount"
+              ng-model="vm.pageNo"
+              ng-disabled="vm.isLoadingResults"
+              ng-change="vm.getPage()"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+    <p style="color: gray; font-size: 0.6em">
+      We do not provide any guarantee that the contents provided will always be current, accurate or complete. For more legal information, see the
+      <a href="https://hitontology.eu/imprint/">HITO imprint</a>.
+    </p>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/lodash/lodash.min.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="node_modules/angular-spinner/dist/angular-spinner.min.js"></script>
+    <script src="node_modules/checklist-model/checklist-model.js"></script>
+    <script src="node_modules/angular-paging-sparql-service/dist/sparql-service.js"></script>
+    <script src="node_modules/sparql-faceter/dist/semantic-faceted-search.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.js"></script>
+
+    <script src="softwareproduct-service.js"></script>
+    <script src="softwareproduct-controller.js"></script>
+  </body>
+</html>

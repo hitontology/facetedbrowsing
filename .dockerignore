@@ -1,0 +1,9 @@
+*.swp
+node_packages
+package-lock.json
+node_modules
+Dockerfile
+run
+README.md
+.*
+LICENSE

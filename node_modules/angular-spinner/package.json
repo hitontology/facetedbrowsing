@@ -1,0 +1,50 @@
+{
+  "name": "angular-spinner",
+  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/urish/angular-spinner.git"
+  },
+  "main": "./dist/angular-spinner.js",
+  "dependencies": {
+    "spin.js": "2.3.2"
+  },
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && npm run build:browser && npm run build:browser:debug",
+    "build:browser": "webpack ./src/angular-spinner.ts ./dist/angular-spinner.min.js --output-library-target=\"umd\" -p --config webpack.production.config.js",
+    "build:browser:debug": "webpack ./src/angular-spinner.ts ./dist/angular-spinner.js --output-library-target=\"umd\" -d",
+    "prepublish": "npm run build",
+    "test": "karma start karma.conf.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/angular": "1.6.1",
+    "@types/angular-mocks": "1.5.8",
+    "@types/jasmine": "2.5.40",
+    "@types/jquery": "2.0.39",
+    "@types/spin.js": "2.3.0",
+    "angular": "1.6.1",
+    "angular-mocks": "1.6.1",
+    "coveralls": "2.11.15",
+    "istanbul-instrumenter-loader": "1.0.0",
+    "jasmine": "2.5.3",
+    "karma": "1.3.0",
+    "karma-coverage": "1.1.1",
+    "karma-jasmine": "1.1.0",
+    "karma-phantomjs-launcher": "1.0.2",
+    "karma-source-map-support": "1.2.0",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "2.0.1",
+    "rimraf": "2.5.4",
+    "ts-loader": "1.3.3",
+    "typescript": "2.1.5",
+    "webpack": "1.14.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "dist/"
+  ]
+}

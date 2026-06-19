@@ -1,0 +1,7 @@
+{
+    "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_1" } ,
+    "type": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_types/PoliticalActivity" } ,
+    "label": { "type": "literal" , "value": "Eduskunnan viimeinen kokous Kauhajoella." } ,
+    "date": { "type": "uri" , "value": "http://ldf.fi/warsa/events/times/time_1940-02-12-1940-02-12" } ,
+    "place": { "type": "uri" , "value": "http://ldf.fi/warsa/places/municipalities/m_place_119" }
+}

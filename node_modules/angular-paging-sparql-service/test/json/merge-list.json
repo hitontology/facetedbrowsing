@@ -1,0 +1,50 @@
+[
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_347" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-01-17" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/karelian_places/k_place_30" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Pitkäranta" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_525" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-22" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/karelian_places/k_place_30" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Pitkäranta" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_525" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-22" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/karelian_places/k_place_33584" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Vuoksi" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_525" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-22" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/karelian_places/k_place_1057" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Kämärä" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_525" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-22" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/karelian_places/k_place_32784" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Laatokka" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_525" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-22" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/karelian_places/k_place_1505" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Taipale" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_525" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-22" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/karelian_places/k_place_34993" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Muolaanjärvi" }
+    } ,
+    {
+        "id": { "type": "uri" , "value": "http://ldf.fi/warsa/events/event_1233" } ,
+        "date": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "1940-02-26" } ,
+        "place__id": { "type": "uri" , "value": "http://ldf.fi/warsa/places/karelian_places/k_place_30" } ,
+        "place__label": { "type": "literal" , "xml:lang": "fi" , "value": "Pitkäranta" }
+    }
+]
